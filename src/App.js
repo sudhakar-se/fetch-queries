@@ -3,7 +3,8 @@ import { useState } from 'react'
 import { fetchPokemon } from './service/pokemon';
 import { useQuery } from '@tanstack/react-query';
 
-const pokemon = ['bulbasaur', 'pikachu', 'ditto', 'bulbasaur']
+const pokemon = ['bulbasaur', 'pikachu', 'ditto', 'bulbasaur','bulbasaur','bulbasaur']
+
 // const pokemon = [ 'pikachu','ditto']
 
 export default function App() {
