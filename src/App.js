@@ -1,10 +1,14 @@
 import  {Pokemon} from './component/Pokemon1'
 import { useState } from 'react'
+import { fetchPokemon } from './service/pokemon';
+import { useQuery } from '@tanstack/react-query';
 
 const pokemon = ['bulbasaur', 'pikachu', 'ditto', 'bulbasaur']
+// const pokemon = [ 'pikachu','ditto']
 
 export default function App() {
   const [pollingInterval, setPollingInterval] = useState(0)
+  console.log("🚀 ~ App ~ pollingInterval:", pollingInterval)
 
   return (
     <div className="App">
