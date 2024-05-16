@@ -1,5 +1,9 @@
 import { Pokemon } from "./component/Pokemon1";
 import { useState } from "react";
+const a={
+  hi:'j',j:'d',
+  j:'d'
+}
 
 const pokemon = [
   "bulbasaur",
