@@ -1,10 +1,17 @@
-import  {Pokemon} from './component/Pokemon1'
-import { useState } from 'react'
+import { Pokemon } from "./component/Pokemon1";
+import { useState } from "react";
 
-const pokemon = ['bulbasaur', 'pikachu', 'ditto', 'bulbasaur','bulbasaur','bulbasaur']
+const pokemon = [
+  "bulbasaur",
+  "pikachu",
+  "ditto",
+  "bulbasaur",
+  "bulbasaur",
+  "bulbasaur",
+];
 
 export default function App() {
-  const [pollingInterval, setPollingInterval] = useState(0)
+  const [pollingInterval, setPollingInterval] = useState(0);
 
   return (
     <div className="App">
@@ -21,5 +28,5 @@ export default function App() {
         ))}
       </div>
     </div>
-  )
+  );
 }

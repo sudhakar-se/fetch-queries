@@ -1,15 +1,12 @@
-import { useGetPokemonByNameQuery } from '../service/pokemon'
+import { useGetPokemonByNameQuery } from "../service/pokemon";
 
-export const Pokemon = ({
-  name,
-  pollingInterval,
-}) => {
+export const Pokemon = ({ name, pollingInterval }) => {
   const { data, error, isLoading, isFetching } = useGetPokemonByNameQuery(
     name,
     {
       pollingInterval,
     },
-  )
+  );
 
   return (
     <>
@@ -20,11 +17,11 @@ export const Pokemon = ({
       ) : data ? (
         <>
           <h3>
-            {data.species.name} {isFetching ? '...' : ''}
+            {data.species.name} {isFetching ? "..." : ""}
           </h3>
           <img src={data.sprites.front_shiny} alt={data.species.name} />
         </>
       ) : null}
     </>
-  )
-}
+  );
+};
