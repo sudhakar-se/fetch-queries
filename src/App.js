@@ -5,7 +5,8 @@ const a={
   j:'d'
 }
 
-const pokemon = [
+
+      const pokemon = [
   "bulbasaur",
   "pikachu",
   "ditto",
