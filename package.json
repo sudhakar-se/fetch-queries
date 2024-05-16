@@ -24,17 +24,13 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prepare": "husky install",
-    "format": "prettier --write .",
-    "lint": "prettier --check ."
+    "lint": "prettier --check .",
+    "format": "prettier --write ."
   },
   "husky": {
     "hooks": {
       "pre-commit": "prettier --write . && git add -A ."
     }
-  },
-  "lint-staged": {
-    "*": "prettier --write"
   },
   "eslintConfig": {
     "extends": [
@@ -55,9 +51,6 @@
     ]
   },
   "devDependencies": {
-    "husky": "^6.0.0",
-    "jest": "^26.6.3",
-    "precise-commits": "^1.0.2",
     "prettier": "^3.2.5"
   }
 }
