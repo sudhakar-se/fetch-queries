@@ -12,6 +12,11 @@
     "*.{ts,tsx,js,jsx}": "eslint --fix",
     "*.{json,md,html,css,scss,js,jsx,ts,tsx}": "prettier --write"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx lint-staged"
+    }
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
