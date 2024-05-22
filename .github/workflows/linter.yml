@@ -8,17 +8,36 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Checkout Code
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Lint TypeScript and TSX
+        run: npx eslint '**/*.{ts,tsx}'
+        continue-on-error: false
+
+      - name: Lint SCSS
+        run: npx stylelint '**/*.scss'
+        continue-on-error: false
+
+      - name: Lint HTML
+        run: npx htmlhint '**/*.html'
+        continue-on-error: false
+
       - name: Lint Code Base
         uses: github/super-linter@v4
         env:
           VALIDATE_ALL_CODEBASE: true
-          VALIDATE_JAVASCRIPT_ES: true
-          VALIDATE_PYTHON_BLACK: true
+          VALIDATE_TYPESCRIPT_ES: true
+          VALIDATE_SCSS_LINT: true
           VALIDATE_HTML: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
