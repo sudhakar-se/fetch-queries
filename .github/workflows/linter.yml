@@ -1,3 +1,10 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "indentation": 2,
+    "string-quotes": "single"
+  }
+}
 name: Lint Code Base
 
 on: [push, pull_request]
@@ -20,6 +27,9 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+
+      - name: Install Stylelint
+        run: npm install stylelint stylelint-config-standard
 
       - name: Lint TypeScript and TSX
         run: npx eslint '**/*.{ts,tsx}'
