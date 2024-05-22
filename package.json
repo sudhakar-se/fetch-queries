@@ -24,7 +24,6 @@
     ]
   },
   "dependencies": {
-    "lint-staged": "^15.2.4",
     "next": "14.2.3",
     "prettier": "^3.2.5",
     "react": "^18",
@@ -37,6 +36,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "husky": "^8.0.3",
-    "typescript": "^5"
+    "typescript": "^5",
+    "lint-staged": "^15.2.2"
   }
 }
