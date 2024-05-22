@@ -16,7 +16,8 @@ export default function Home() {
             rel="noopener noreferrer"
           >
             By{" "}
-            <Image
+                           
+                            <Image
               src="/vercel.svg"
               alt="Vercel Logo"
               className={styles.vercelLogo}
