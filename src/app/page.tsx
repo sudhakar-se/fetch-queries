@@ -16,9 +16,7 @@ export default function Home() {
             rel="noopener noreferrer"
           >
             By{" "}
-                           
-                         
-                            <Image
+            <Image
               src="/vercel.svg"
               alt="Vercel Logo"
               className={styles.vercelLogo}
@@ -95,3 +93,5 @@ export default function Home() {
     </main>
   );
 }
+
+a;
