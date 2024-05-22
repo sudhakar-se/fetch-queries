@@ -7,7 +7,7 @@ export const Pokemon = ({ name,pollingInterval }) => {
   const { data, isLoading, isError } = useQuery({
     queryKey: ["pokemon",name],
     queryFn: () => fetchPokemon(name),
-    refetchOnWindowFocus: false,
+    refetchOnWindowFocus: true,
     refetchInterval:pollingInterval
   });
  
