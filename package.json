@@ -24,8 +24,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prettier:format": "prettier --write \"**/*.{ts,tsx,js,md,mdx,css,yaml}\"",
-    "prettier:check:ci": "prettier --check \"**/*.{ts,tsx,js,md,mdx,css,yaml}\""
+    "prettier:format": "prettier --write \"**/*.{ts,tsx,js,md,mdx,css,scss,yaml}\"",
+    "prettier:check:ci": "prettier --check \"**/*.{ts,tsx,js,md,mdx,css,scss,yaml}\""
   },
   "husky": {
     "hooks": {
