@@ -27,11 +27,6 @@
     "prettier:format": "prettier --write \"**/*.{ts,tsx,js,md,mdx,css,scss,yaml}\"",
     "prettier:check:ci": "prettier --check \"**/*.{ts,tsx,js,md,mdx,css,scss,yaml}\""
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "prettier:format && git add -A ."
-    }
-  },
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -51,6 +46,8 @@
     ]
   },
   "devDependencies": {
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.4",
     "prettier": "3.2.5"
   }
 }
