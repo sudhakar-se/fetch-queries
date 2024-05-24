@@ -1,10 +1,13 @@
 name: Code Quality checks
+
 on:
   pull_request:
     branches: [main]
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
+
 jobs:
   prettier:
     name: Prettier
@@ -14,10 +17,7 @@ jobs:
         node-version: [18]
     steps:
       - uses: actions/checkout@v3
-      - uses: npm/action-setup@v2
-        with:
-          version: 8
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
@@ -25,4 +25,4 @@ jobs:
       - name: Install dependencies
         run: npm install -D
       - name: Check formatting with Prettier
-        run: npm prettier:check:ci
+        run: npm run prettier:check:ci
