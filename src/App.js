@@ -23,10 +23,7 @@ export default function App() {
       <select
         onChange={(change) => setPollingInterval(Number(change.target.value))}
       >
-          
-            
-            
-              <option value={0}>Off</option>
+        <option value={0}>Off</option>
         <option value={1000}>1s</option>
         <option value={5000}>5s</option>
       </select>
