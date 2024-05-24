@@ -1,1 +1,1 @@
-prettier:check:ci
+npm run prettier:format
