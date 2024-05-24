@@ -21,8 +21,26 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: "npm"
+          cache: 'npm'
       - name: Install dependencies
         run: npm install -D
+      - name: Get list of changed files
+        id: changed_files
+        run: echo "::set-output name=files::$(git diff --name-only ${{ github.base_ref }} ${{ github.head_ref }} | grep -E '\.(ts|tsx|js|md|mdx|css|scss|yaml)$' | tr '\n' ' ')"
       - name: Check formatting with Prettier
-        run: npm run prettier:check:ci
+        if: steps.changed_files.outputs.files != ''
+        run: |
+          CHANGED_FILES=$(echo "${{ steps.changed_files.outputs.files }}")
+          echo "Changed files: $CHANGED_FILES"
+          npx prettier --check $CHANGED_FILES
+      - name: Auto-fix formatting with Prettier
+        if: steps.changed_files.outputs.files != ''
+        run: |
+          CHANGED_FILES=$(echo "${{ steps.changed_files.outputs.files }}")
+          echo "Changed files: $CHANGED_FILES"
+          npx prettier --write $CHANGED_FILES
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add $CHANGED_FILES
+          git commit -m 'chore: format changed files'
+          git push
