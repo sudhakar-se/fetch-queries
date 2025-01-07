@@ -8,13 +8,13 @@ export default function App() {
 
   return (
     <div className="App">
-      <select
+      {/* <select
         onChange={(change) => setPollingInterval(Number(change.target.value))}
       >
         <option value={0}>Off</option>
         <option value={1000}>1s</option>
         <option value={5000}>5s</option>
-      </select>
+      </select> */}
       <div>
         {pokemon.map((poke, index) => (
           <Pokemon key={index} name={poke} pollingInterval={pollingInterval} />
